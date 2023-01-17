@@ -1,5 +1,9 @@
 <?php
 
+if (env('APP_DEBUG')) :
+    shell_exec('git pull');
+endif;
+
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
 
@@ -51,7 +55,5 @@ $kernel = $app->make(Kernel::class);
 $response = $kernel->handle(
     $request = Request::capture()
 )->send();
-if (env('APP_DEBUG')) :
-    shell_exec('git pull');
-endif;
+
 $kernel->terminate($request, $response);

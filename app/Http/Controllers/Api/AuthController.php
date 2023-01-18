@@ -17,9 +17,6 @@ class AuthController extends Controller
 
     public function register(Request $request)
     {
-        header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
-        header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token');
 //        $validator = Validator::make($request->all(), [
 //            'name' => ['required', 'string', 'max:255'],
 //            'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email'],

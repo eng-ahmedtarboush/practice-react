@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['*'.parse_url(env('APP_URL'))['host'].'*'],
+    'allowed_origins' => ['*'.parse_url(env('APP_URL'))['host'].'*','*'.parse_url(env('APP_URL'))['host'].'*'],
 
     'allowed_origins_patterns' => [],
 

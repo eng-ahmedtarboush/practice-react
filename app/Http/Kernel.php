@@ -67,8 +67,6 @@ class Kernel extends HttpKernel
             EnsureFrontendRequestsAreStateful::class,
             'throttle:api',
             SubstituteBindings::class,
-
-            ModifyHeadersMiddleware::class,
         ],
     ];
 

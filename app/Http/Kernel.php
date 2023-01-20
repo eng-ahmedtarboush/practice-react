@@ -64,11 +64,11 @@ class Kernel extends HttpKernel
         ],
 
         'api' => [
-            ModifyHeadersMiddleware::class,
-            
             EnsureFrontendRequestsAreStateful::class,
             'throttle:api',
             SubstituteBindings::class,
+
+            ModifyHeadersMiddleware::class,
         ],
     ];
 

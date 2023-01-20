@@ -40,8 +40,6 @@ class Kernel extends HttpKernel
      */
     protected $middleware = [
         // \App\Http\Middleware\TrustHosts::class,
-
-        \Fruitcake\Cors\HandleCors::class,
         TrustProxies::class,
         HandleCors::class,
         PreventRequestsDuringMaintenance::class,
@@ -66,10 +64,11 @@ class Kernel extends HttpKernel
         ],
 
         'api' => [
+            ModifyHeadersMiddleware::class,
+            
             EnsureFrontendRequestsAreStateful::class,
             'throttle:api',
             SubstituteBindings::class,
-            ModifyHeadersMiddleware::class,
         ],
     ];
 

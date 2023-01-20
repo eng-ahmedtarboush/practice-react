@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/user', function (Request $request) {
+Route::post('/user', function (Request $request) {
     return ['انا تماااام'];
 //    return $request->user()->only(['name', 'email', 'phone_number']);
 });

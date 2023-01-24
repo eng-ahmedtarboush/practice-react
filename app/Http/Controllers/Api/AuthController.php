@@ -63,6 +63,7 @@ class AuthController extends Controller
 
         if (auth()->attempt($credentials)) {
             if (auth()->user()->tokens()->count() >= config('zircon.max_login_attempts')) {
+                auth()->user()->currentAccessToken()->delete();
                 return response()->json(['success' => false, 'message' => 'لقد تجاوزت الحد الاقصى من محاولات الدخول', 'data' => []], 403);
             }else{
                 return response()->json([

@@ -21,10 +21,6 @@ return [
 
     'allowed_origins' => [
         '*',
-        'http://'.parse_url(env('APP_URL'))['host'].':*',
-        'https://'.parse_url(env('APP_URL'))['host'].':*',
-        'http://*.'.parse_url(env('APP_URL'))['host'].':*',
-        'https://*.'.parse_url(env('APP_URL'))['host'].':*'
     ],
 
     'allowed_origins_patterns' => [],

@@ -15,10 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth.sanctum')->get('/user', function (Request $request) {
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user()->only(['name', 'email', 'phone_number']);
 });
-Route::middleware('auth.sanctum')->get('/users', function (Request $request) {
+Route::middleware(['auth:sanctum'])->get('/users', function (Request $request) {
     return \App\Models\User::query()->select(['name', 'email', 'phone_number'])->get()->toArray();
 });
 
